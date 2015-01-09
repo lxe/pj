@@ -6,7 +6,7 @@ Simple JSON parser alias for your shell.
 
 place this in your `~/.bashrc` or `~/.zshrc`:
 
-```
+```bash
 alias pj="node -e 'b=require(\"stream\").Transform(),p=process,a=p.argv[1],s=\"\",b._transform=function(p,i,n){s+=\"\"+p,n()},b._flush=function(i){j=JSON.parse(s),a&&a.split(\"/\").map(function(s){j=j[s]||p.exit(-1)}),this.push(JSON.stringify(j,null,\"  \")+\"\n\"),i()},p.stdin.pipe(b).pipe(p.stdout)'"
 ```
 
